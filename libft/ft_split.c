@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 11:55:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/14 17:34:02 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/21 16:06:04 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,11 @@ char			**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		k;
 	int		scount;
 	char	**arr;
 
 	i = 0;
 	scount = 0;
-	k = ft_count_chars(&s[i], c) + 1;
 	if (!(arr = (char **)malloc((ft_count_substrs(s, c) + 1) * sizeof(char *))))
 		return (NULL);
 	while (scount < ft_count_substrs(s, c))
@@ -71,7 +69,8 @@ char			**ft_split(char const *s, char c)
 		j = 0;
 		while (s[i] == c)
 			i++;
-		arr[scount] = (char *)malloc((k * sizeof(char)));
+		arr[scount] = (char *)malloc(((ft_count_chars(&s[i], c) + 1)
+					* sizeof(char)));
 		while (s[i] != c && s[i] != '\0')
 			arr[scount][j++] = s[i++];
 		arr[scount][j] = '\0';

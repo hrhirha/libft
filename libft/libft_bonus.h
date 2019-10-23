@@ -6,12 +6,13 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:05:52 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/19 12:26:05 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/22 19:21:33 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
+# include <stdio.h>
 
 typedef	struct		s_list
 {

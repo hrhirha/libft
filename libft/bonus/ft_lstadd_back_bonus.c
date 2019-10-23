@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 16:44:28 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/22 19:05:20 by hrhirha          ###   ########.fr       */
+/*   Created: 2019/10/22 19:16:33 by hrhirha           #+#    #+#             */
+/*   Updated: 2019/10/23 11:02:45 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "../libft_bonus.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	int		i;
-	char	*str;
+	t_list *tmp;
 
-	if (!(str = malloc(len * sizeof(char) + 1)))
-		return (NULL);
-	i = 0;
-	while (s[start + i] != '\0' && len > 0)
-	{
-		str[i] = s[start + i];
-		i++;
-		len--;
-	}
-	str[i] = '\0';
-	return (str);
+	tmp = *alst;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	new->next = NULL;
+	tmp->next = new;
 }

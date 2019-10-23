@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 20:08:28 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/22 19:54:50 by hrhirha          ###   ########.fr       */
+/*   Created: 2019/10/21 19:08:55 by hrhirha           #+#    #+#             */
+/*   Updated: 2019/10/23 11:02:21 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "../libft_bonus.h"
 
-static	size_t	ft_strlen(const char *str)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	t_list	*tmp;
+	int		i;
 
 	i = 0;
-	while (str[i] != '\0')
+	tmp = lst;
+	while (tmp != NULL)
 	{
+		tmp = tmp->next;
 		i++;
 	}
 	return (i);
-}
-
-char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	int		i;
-	char	*str;
-
-	if (!(str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char))))
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	str[i] = s[i];
-	return (str);
 }

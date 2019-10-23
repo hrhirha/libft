@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:18:32 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/17 10:38:09 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/21 23:34:36 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,12 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size)
 	count = size - ft_strlen(dst) - 1;
 	if (size <= ft_strlen(dst))
 		return (ft_strlen(src) + size);
-	else
+	while (j < count && src[j] != '\0')
 	{
-		while (j < count)
-		{
-			dst[i] = src[j];
-			i++;
-			j++;
-		}
-		dst[i] = '\0';
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
+	dst[i] = '\0';
 	return (res);
 }
