@@ -6,11 +6,11 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:48:51 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/23 11:03:11 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/23 13:20:32 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

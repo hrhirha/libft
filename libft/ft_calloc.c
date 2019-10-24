@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 02:21:45 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/16 19:11:34 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/23 13:21:25 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*str;
 	size_t	i;
 
-	str = (void *)malloc(count * size);
+	if (!(str = (void *)malloc(count * size)))
+		return (NULL);
 	i = 0;
 	while (i < count * size)
 	{

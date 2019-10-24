@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:42:35 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/15 09:50:22 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/23 18:32:06 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@ void			ft_putstr_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s == NULL)
+		ft_putchar_fd(0, fd);
+	else
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	}
 }
