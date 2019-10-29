@@ -6,11 +6,11 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 11:55:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/24 10:32:42 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/29 10:45:18 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static	int		ft_count_substrs(char const *s, char c)
 {

@@ -6,18 +6,13 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:55:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/15 09:50:48 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/29 10:27:37 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-static	void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-void			ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int un;
 

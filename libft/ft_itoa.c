@@ -6,11 +6,11 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 16:13:25 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/17 11:08:31 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/29 09:39:56 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static	int		ft_malloc_len(int i)
 {

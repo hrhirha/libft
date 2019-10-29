@@ -6,7 +6,7 @@
 #    By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 11:36:45 by hrhirha           #+#    #+#              #
-#    Updated: 2019/10/23 13:06:30 by hrhirha          ###   ########.fr        #
+#    Updated: 2019/10/29 14:21:38 by hrhirha          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,22 @@ FLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 bonus : clean
-	$(CC) $(FLAGS) -c $(B_SRC)
-	ar rc $(NAME) $(B_OBJ)
+	@$(CC) $(FLAGS) -c $(B_SRC)
+	@ar rc $(NAME) $(B_OBJ)
+	@ranlib $(NAME)
 
 
 $(NAME) : $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 $(OBJ) : $(SRC)
-	$(CC) $(FLAGS) -c $(SRC)
+	@$(CC) $(FLAGS) -c $(SRC)
 
 clean :
-	rm -rf *.o
+	@rm -rf *.o
 
 fclean : clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re : fclean $(NAME)

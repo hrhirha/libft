@@ -6,11 +6,10 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:27:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/23 13:19:57 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/29 09:45:24 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)

@@ -6,11 +6,11 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:15:52 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/16 19:02:25 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/29 14:46:55 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
