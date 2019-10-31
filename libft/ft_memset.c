@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:58:41 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/29 10:18:09 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/31 10:22:33 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memset(void *str, int c, size_t n)
 		s[i] = (unsigned char)c;
 		i++;
 	}
-	return (str);
+	return (s);
 }

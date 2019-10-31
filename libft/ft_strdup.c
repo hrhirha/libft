@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 02:48:31 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/29 11:08:50 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/31 10:10:22 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *str)
 	if (!(copy = (char *)malloc((ft_strlen(str) + 1) * sizeof(char))))
 		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		copy[i] = str[i];
 		i++;

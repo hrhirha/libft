@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 11:55:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/29 10:45:18 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/30 17:35:43 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static	int		ft_count_substrs(char const *s, char c)
 
 	i = 0;
 	scount = 0;
+	if (s[i] == '\0')
+		return (scount);
 	while (s[i] != '\0')
 	{
 		while (s[i] == c)

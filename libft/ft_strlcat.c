@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:18:32 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/29 14:49:53 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/10/30 18:05:49 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
+	size_t src_len;
+	size_t dst_len;
 	size_t count;
-	size_t res;
+	size_t i;
 
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
 	if (dst == NULL && size == 0)
-		return (ft_strlen(src));
-	res = ft_strlen(src) + ft_strlen(dst);
-	i = ft_strlen(dst);
-	j = 0;
-	count = size - ft_strlen(dst) - 1;
-	if (size <= ft_strlen(dst))
-		return (ft_strlen(src) + size);
-	while (j < count && src[j] != '\0')
+		return (src_len);
+	i = 0;
+	count = size - dst_len - 1;
+	if (size <= dst_len)
+		return (src_len + size);
+	while (count-- && src[i] != '\0')
 	{
-		dst[i] = src[j];
+		dst[dst_len + i] = src[i];
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (res);
+	dst[dst_len + i] = '\0';
+	return (src_len + dst_len);
 }
