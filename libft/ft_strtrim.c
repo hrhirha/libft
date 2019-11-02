@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 18:34:25 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/30 18:40:39 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/11/02 12:00:48 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int	ft_trimstart(char const *s1, char const *set)
 
 	i = 0;
 	j = 0;
-	while (set[j] != '\0' && s1[i] != '\0')
+	while (set[j] && s1[i])
 	{
 		if (s1[i] != set[j])
 			j++;
@@ -62,8 +62,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	i = 0;
-	if (s1 == NULL || set == NULL)
-		return ((char *)s1);
+	if (s1 == NULL)
+		return (NULL);
 	j = ft_trimstart(s1, set);
 	k = ft_trimend(s1, set);
 	if (!(str = (char *)malloc((k - j + 2) * sizeof(char))))

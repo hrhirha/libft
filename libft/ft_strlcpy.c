@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:09:27 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/31 09:07:47 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/11/02 09:04:23 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		*dst = '\0';
 	}
-	if (size == 0 && *src != '\0')
+	if (size == 0 && *src)
 	{
 		while (*src)
 			src++;
