@@ -6,7 +6,7 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 18:34:25 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/11/02 12:00:48 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/11/05 22:19:34 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (s1 == NULL)
 		return (NULL);
+	if (set == NULL)
+		return (ft_strdup((char *)s1));
 	j = ft_trimstart(s1, set);
 	k = ft_trimend(s1, set);
 	if (!(str = (char *)malloc((k - j + 2) * sizeof(char))))

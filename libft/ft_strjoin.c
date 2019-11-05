@@ -6,12 +6,11 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 17:33:27 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/11/02 11:46:22 by hrhirha          ###   ########.fr       */
+/*   Updated: 2019/11/05 22:19:39 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -39,13 +38,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-int		main()
-{
-	char a[] = "aaaa\eaaas\nsdd";
-	char b[] = "bbbaasd\e dsab";
-	printf("dyalna ===== > [%s\n]", ft_strjoin(a, b));
-
-
 }
