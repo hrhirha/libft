@@ -50,7 +50,7 @@ This library contains the following functions:
  - ft_putendl_fd
  - ft_putnbr_fd
 
-# linked list
+## linked list
     
 The following structure is used the represent each element of the list:
    
