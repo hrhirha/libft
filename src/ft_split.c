@@ -6,16 +6,16 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 11:55:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/11/05 22:19:23 by hrhirha          ###   ########.fr       */
+/*   Updated: 2024/03/28 14:34:03 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_count_substrs(char const *s, char c)
+static int	ft_count_substrs(char const *s, char c)
 {
-	int i;
-	int scount;
+	int	i;
+	int	scount;
 
 	i = 0;
 	scount = 0;
@@ -38,14 +38,14 @@ static	int		ft_count_substrs(char const *s, char c)
 	return (scount);
 }
 
-static	int		ft_count_chars(char const *s, char c)
+static int	ft_count_chars(char const *s, char c)
 {
-	int i;
-	int ccount;
+	int	i;
+	int	ccount;
 
 	i = 0;
 	ccount = 0;
-	while (s[i] == c)
+	while (s[i] && s[i] == c)
 		i++;
 	while (s[i] != c && s[i] != '\0')
 	{
@@ -55,7 +55,7 @@ static	int		ft_count_chars(char const *s, char c)
 	return (ccount);
 }
 
-static	char	**ft_free_arr(char **arr, int scount)
+static char	**ft_free_arr(char ***arr, int scount)
 {
 	while (scount >= 0)
 	{
@@ -66,7 +66,14 @@ static	char	**ft_free_arr(char **arr, int scount)
 	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+static int	skip_delim(const char *s, char c, int i)
+{
+	while (s[i] == c)
+		i++;
+	return (i);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -77,16 +84,16 @@ char			**ft_split(char const *s, char c)
 	scount = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(arr = (char **)malloc((ft_count_substrs(s, c) + 1) * sizeof(char *))))
+	arr = (char **)malloc((ft_count_substrs(s, c) + 1) * sizeof(char *));
+	if (!arr)
 		return (NULL);
 	while (scount < ft_count_substrs(s, c))
 	{
 		j = 0;
-		while (s[i] == c)
-			i++;
-		if (!(arr[scount] = (char *)malloc(((ft_count_chars(&s[i], c) + 1)
-							* sizeof(char)))))
-			return (ft_free_arr(arr, scount));
+		i = skip_delim(s, c, i);
+		arr[scount] = malloc(ft_count_chars(&s[i], c) + 1);
+		if (!arr[scount])
+			return (ft_free_arr(&arr, scount));
 		while (s[i] != c && s[i] != '\0')
 			arr[scount][j++] = s[i++];
 		arr[scount++][j] = '\0';

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 02:21:45 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/31 18:58:03 by hrhirha          ###   ########.fr       */
+/*   Created: 2019/10/14 11:42:35 by hrhirha           #+#    #+#             */
+/*   Updated: 2024/03/28 13:56:07 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
-	size_t	i;
+	int	i;
 
-	if (!(str = (char *)malloc(count * size)))
-		return (NULL);
 	i = 0;
-	while (i < count * size)
+	if (s == NULL)
+		ft_putchar_fd(0, fd);
+	else
 	{
-		str[i] = 0;
-		i++;
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	}
-	return (str);
 }

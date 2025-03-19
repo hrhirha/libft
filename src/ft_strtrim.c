@@ -6,16 +6,16 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 18:34:25 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/11/05 22:19:34 by hrhirha          ###   ########.fr       */
+/*   Updated: 2024/03/28 14:06:32 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_trimstart(char const *s1, char const *set)
+static int	ft_trimstart(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -32,10 +32,10 @@ static	int	ft_trimstart(char const *s1, char const *set)
 	return (i);
 }
 
-static	int	ft_trimend(char const *s1, char const *set)
+static int	ft_trimend(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = ft_strlen(s1) - 1;
 	j = 0;
@@ -54,7 +54,7 @@ static	int	ft_trimend(char const *s1, char const *set)
 	return (i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -68,7 +68,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup((char *)s1));
 	j = ft_trimstart(s1, set);
 	k = ft_trimend(s1, set);
-	if (!(str = (char *)malloc((k - j + 2) * sizeof(char))))
+	str = (char *)malloc((k - j + 2) * sizeof(char));
+	if (!str)
 		return (NULL);
 	while (j <= k)
 	{

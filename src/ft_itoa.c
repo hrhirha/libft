@@ -6,13 +6,13 @@
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 16:13:25 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/11/05 09:27:48 by hrhirha          ###   ########.fr       */
+/*   Updated: 2024/03/28 13:54:09 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int				ft_malloc_len(int i)
+static int	ft_malloc_len(int i)
 {
 	unsigned int	ui;
 	int				len;
@@ -34,7 +34,7 @@ static	int				ft_malloc_len(int i)
 	return (len);
 }
 
-static	unsigned	int	ft_isnegative(int i, char *str)
+static unsigned int	ft_isnegative(int i, char *str)
 {
 	if (i < 0)
 	{
@@ -44,7 +44,7 @@ static	unsigned	int	ft_isnegative(int i, char *str)
 	return (i);
 }
 
-char					*ft_itoa(int i)
+char	*ft_itoa(int i)
 {
 	unsigned int	ui;
 	int				count;
@@ -53,7 +53,8 @@ char					*ft_itoa(int i)
 
 	count = ft_malloc_len(i);
 	digits = "0123456789";
-	if (!(str = (char *)malloc((count + 1) * sizeof(char))))
+	str = (char *)malloc((count + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
 	ui = ft_isnegative(i, str);
 	str[count--] = '\0';

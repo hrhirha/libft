@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/14 11:55:11 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/29 10:27:37 by hrhirha          ###   ########.fr       */
+/*   Created: 2019/10/10 23:37:31 by hrhirha           #+#    #+#             */
+/*   Updated: 2024/03/28 14:05:30 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int un;
+	size_t	i;
 
-	if (n < 0)
+	i = 0;
+	while (i < n)
 	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
+		if (s1[i] != s2[i] || s1[i] == '\0')
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	un = n;
-	if (un < 10)
-		ft_putchar_fd(un + 48, fd);
-	if (un >= 10)
-	{
-		ft_putnbr_fd(un / 10, fd);
-		ft_putchar_fd(un % 10 + 48, fd);
-	}
+	return (0);
 }

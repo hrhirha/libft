@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrhirha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 15:48:51 by hrhirha           #+#    #+#             */
-/*   Updated: 2019/10/29 09:44:10 by hrhirha          ###   ########.fr       */
+/*   Created: 2019/10/11 01:37:26 by hrhirha           #+#    #+#             */
+/*   Updated: 2024/03/28 13:52:30 by hrhirha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list	*ft_lstlast(t_list *lst)
+int	ft_isascii(int c)
 {
-	t_list *tmp;
-
-	tmp = lst;
-	while (tmp != NULL)
-	{
-		if (tmp->next == NULL)
-			return (tmp);
-		tmp = tmp->next;
-	}
-	return (NULL);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
